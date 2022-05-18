@@ -4,3 +4,4 @@ import androidx.room.Entity
 
 @Entity
 data class ProductEntity(var demoVariable:Int)
+
