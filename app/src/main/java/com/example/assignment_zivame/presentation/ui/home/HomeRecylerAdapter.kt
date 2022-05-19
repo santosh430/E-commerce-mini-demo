@@ -33,6 +33,9 @@ class HomeRecylerAdapter(private val homeActivity: HomeActivity) : RecyclerView.
         holder.binding.tvProductPrice.text=list[position].price
         holder.binding.tvProductRating.rating= list[position].rating.toFloat()
 
+        holder.binding.btnAddToCart.setOnClickListener {
+
+        }
     }
 
     override fun getItemCount(): Int {
