@@ -29,6 +29,7 @@ class LoaderFragment : Fragment() {
                 replace(R.id.loaderFragment,OrderPlacedFragment())?.commit()
         },30000)
 
+
         return inflater.inflate(R.layout.fragment_loader, container, false)
     }
 
