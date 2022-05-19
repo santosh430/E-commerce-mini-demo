@@ -44,7 +44,7 @@ class HomeRecylerAdapter(private val homeActivity: HomeActivity) : RecyclerView.
     }
 
 
-    fun playerList(list1:MutableList<Product>){
+    fun productList(list1:MutableList<Product>){
         list.clear()
         list=list1
         Log.d("myTAG","list in adapter $list1")

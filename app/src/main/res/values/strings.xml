@@ -4,4 +4,5 @@
     <string name="add_to_cart">Add to Cart</string>
     <string name="gadgets">GADGETS</string>
     <string name="cart">CART</string>
+    <string name="checkout">Checkout</string>
 </resources>

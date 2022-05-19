@@ -13,7 +13,7 @@ interface ProductDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addProductToDatabase(product:ProductEntity)
 
-    @Query("SELECT * FROM product_table ")
-    fun getProductFromDatabase():LiveData<List<ProductEntity>>
+    @Query("select * from product_table")
+    fun getProductFromDatabase():List<ProductEntity>
 
 }

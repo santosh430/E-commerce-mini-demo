@@ -43,7 +43,7 @@ class HomeActivity : AppCompatActivity(),AddToCartClickListener {
         mViewModel.productLiveData.observe({ lifecycle }, {
             Log.d("TAG",it.toString())
 
-            myAdapter.playerList(it as MutableList<Product>)
+            myAdapter.productList(it as MutableList<Product>)
             binding.rvGadgets.adapter?.notifyDataSetChanged()
         })
 

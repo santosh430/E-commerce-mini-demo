@@ -22,7 +22,7 @@ class ProductRepository(private val database:ProductDataBase,
         database.productDao().addProductToDatabase(products)
     }
 
-    fun getProductsFromDatabase():LiveData<List<ProductEntity>>{
+    fun getProductsFromDatabase():List<ProductEntity>{
         return database.productDao().getProductFromDatabase()
     }
 
