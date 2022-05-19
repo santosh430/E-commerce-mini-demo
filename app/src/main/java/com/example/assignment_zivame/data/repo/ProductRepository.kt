@@ -18,8 +18,14 @@ class ProductRepository(private val database:ProductDataBase,
         return newsApi.getProductsFromApi()
     }
 
+    suspend fun addProductsToDatabase(products:ProductEntity){
+        database.productDao().addProductToDatabase(products)
+    }
+
     fun getProductsFromDatabase():LiveData<List<ProductEntity>>{
         return database.productDao().getProductFromDatabase()
     }
+
+
 
 }
