@@ -6,4 +6,5 @@
     <string name="cart">CART</string>
     <string name="checkout">Checkout</string>
     <string name="loading">Loading...</string>
+    <string name="no_item_in_the_cart">No item in the Cart</string>
 </resources>

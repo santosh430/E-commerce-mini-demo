@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.assignment_zivame.ProductApplication
@@ -50,8 +52,13 @@ class CartFragment : Fragment() {
             {
                 Log.d("TAG","CartFragment livedata $it")
                 mAdapter.productListInCart(it as MutableList<ProductEntity>)
+                binding.btnCheckout.isVisible=true
+                binding.tvNoItems.isInvisible=true
             }
             else{
+                binding.btnCheckout.isInvisible=true
+                binding.tvNoItems.isVisible=true
+
                 Log.d("TAG","CartFragment livedata is null $it")
 
             }
@@ -64,6 +71,7 @@ class CartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnCheckout.setOnClickListener {
+
             activity?.supportFragmentManager?.beginTransaction()?.addToBackStack(null)
                 ?.replace(R.id.cartFragment,LoaderFragment())?.commit()
         }

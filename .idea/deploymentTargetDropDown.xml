@@ -6,12 +6,12 @@
         <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\Santosh\.android\avd\4_WVGA_Nexus_S_API_30.avd" />
+            <type value="SERIAL_NUMBER" />
+            <value value="cb50e4db" />
           </Key>
         </deviceKey>
       </Target>
     </runningDeviceTargetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-05-19T18:54:43.335233200Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-05-19T19:11:47.748387800Z" />
   </component>
 </project>
