@@ -1,9 +1,9 @@
 package com.example.assignment_zivame.presentation.ui.home
 
-import android.graphics.BitmapFactory
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.assignment_zivame.databinding.AdapterHomeRecyclerBinding
@@ -34,7 +34,8 @@ class HomeRecylerAdapter(private val homeActivity: HomeActivity) : RecyclerView.
         holder.binding.tvProductRating.rating= list[position].rating.toFloat()
 
         holder.binding.btnAddToCart.setOnClickListener {
-
+            homeActivity.addItemToCart(list[position])
+            Toast.makeText(homeActivity, "Item Added to Cart", Toast.LENGTH_SHORT).show()
         }
     }
 
