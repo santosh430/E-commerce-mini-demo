@@ -48,16 +48,20 @@ class CartFragment : Fragment() {
 
         //observing live data
         mViewModel.productLiveData.observe(viewLifecycleOwner){
+
             if(it != null)
             {
                 Log.d("TAG","CartFragment livedata $it")
                 mAdapter.productListInCart(it as MutableList<ProductEntity>)
                 binding.btnCheckout.isVisible=true
                 binding.tvNoItems.isInvisible=true
+                binding.rvCart.isVisible=true
             }
             else{
+
                 binding.btnCheckout.isInvisible=true
                 binding.tvNoItems.isVisible=true
+                binding.rvCart.isInvisible=true
 
                 Log.d("TAG","CartFragment livedata is null $it")
 

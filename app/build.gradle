@@ -66,4 +66,6 @@ dependencies {
     //material theme
     implementation 'com.google.android.material:material:1.6.0'
 
+    //lottie for button animation
+    implementation 'com.airbnb.android:lottie:3.4.4'
 }

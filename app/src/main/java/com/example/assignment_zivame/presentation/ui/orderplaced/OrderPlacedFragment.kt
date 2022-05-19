@@ -9,10 +9,6 @@ import com.example.assignment_zivame.R
 
 
 class OrderPlacedFragment : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
