@@ -34,7 +34,7 @@ class CartRecyclerAdapter(private val cartFragment: CartFragment) : RecyclerView
     }
 
     override fun getItemCount(): Int {
-        Log.d("myTAGingetitem",list.toString())
+        Log.d("myTAG",list.size.toString())
         return list.size
     }
 
@@ -42,7 +42,7 @@ class CartRecyclerAdapter(private val cartFragment: CartFragment) : RecyclerView
     fun productListInCart(list1:MutableList<ProductEntity>){
         list.clear()
         list=list1
-        Log.d("myTAGinCartRecycler","list in adapter $list1")
+        Log.d("myTAGCartRecycler","list in adapter $list1")
         notifyDataSetChanged()
 
     }

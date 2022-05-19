@@ -1,6 +1,5 @@
 package com.example.assignment_zivame.data.repo
 
-import androidx.lifecycle.LiveData
 import com.example.assignment_zivame.data.dbhelper.ProductDataBase
 import com.example.assignment_zivame.data.dbhelper.ProductEntity
 import com.example.assignment_zivame.networkcalls.InterfaceAPI

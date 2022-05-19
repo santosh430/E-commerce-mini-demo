@@ -9,28 +9,25 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.assignment_zivame.ProductApplication
+import com.example.assignment_zivame.R
 import com.example.assignment_zivame.data.dbhelper.ProductEntity
 import com.example.assignment_zivame.data.repo.ProductRepository
 import com.example.assignment_zivame.databinding.FragmentCartBinding
+import com.example.assignment_zivame.presentation.ui.loader.LoaderFragment
 import com.example.assignment_zivame.presentation.viewmodel.cart.CartViewModel
 import com.example.assignment_zivame.presentation.viewmodel.cart.MainViewModelFactoryCart
 
 class CartFragment : Fragment() {
 
-    lateinit var binding:FragmentCartBinding
-    lateinit var mAdapter: CartRecyclerAdapter
-    lateinit var repository: ProductRepository
-    lateinit var mViewModel:CartViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private lateinit var binding:FragmentCartBinding
+    private lateinit var mAdapter: CartRecyclerAdapter
+    private lateinit var repository: ProductRepository
+    private lateinit var mViewModel:CartViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentCartBinding.inflate(inflater)
 
@@ -40,12 +37,14 @@ class CartFragment : Fragment() {
             MainViewModelFactoryCart(repository)
         )[CartViewModel::class.java]
 
+        //setting recycler view
         binding.rvCart.apply {
             layoutManager=LinearLayoutManager(context)
             mAdapter= CartRecyclerAdapter(this@CartFragment)
             adapter=mAdapter
         }
 
+        //observing live data
         mViewModel.productLiveData.observe(viewLifecycleOwner){
             if(it != null)
             {
@@ -53,12 +52,9 @@ class CartFragment : Fragment() {
                 mAdapter.productListInCart(it as MutableList<ProductEntity>)
             }
             else{
-                Log.d("TAG","CartFragment livedata null $it")
+                Log.d("TAG","CartFragment livedata is null $it")
 
             }
-
-            Log.d("TAG","CartFragment livedata inside $it")
-
         }
 
         return binding.root
@@ -67,12 +63,11 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //setting recycler view
-
-
-
+        binding.btnCheckout.setOnClickListener {
+            activity?.supportFragmentManager?.beginTransaction()?.addToBackStack(null)
+                ?.replace(R.id.cartFragment,LoaderFragment())?.commit()
+        }
     }
-
 
 
 }
