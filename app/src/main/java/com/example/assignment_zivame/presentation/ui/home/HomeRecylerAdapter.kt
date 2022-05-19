@@ -31,7 +31,7 @@ class HomeRecylerAdapter(private val homeActivity: HomeActivity) : RecyclerView.
             .into(holder.binding.ivProductImage)
         holder.binding.tvProductName.text=list[position].name
         holder.binding.tvProductPrice.text=list[position].price
-        holder.binding.tvProductRating.text= list[position].rating.toString()
+        holder.binding.tvProductRating.rating= list[position].rating.toFloat()
 
     }
 
