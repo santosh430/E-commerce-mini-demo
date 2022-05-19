@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface InterfaceAPI {
 
     @GET("/nancymadan/assignment/db")
-    suspend fun getProducts():Response<DataClassAPI>
+    suspend fun getProductsFromApi():Response<DataClassAPI>
 }
