@@ -17,7 +17,7 @@ class ProductApplication: Application() {
     }
 
     private fun initialize(){
-
+        retrofit =RetrofitHelper
         productDatabase = ProductDataBase.getDataBase(applicationContext)
         productRepository = ProductRepository(productDatabase,retrofit )
 
