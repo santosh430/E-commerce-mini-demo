@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,6 +10,7 @@
     android:background="@color/white"
     android:clickable="true"
     android:focusable="true"
+    android:id="@+id/fragmentOrderPlaced"
     tools:context=".presentation.ui.orderplaced.OrderPlacedFragment">
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -57,7 +60,6 @@
         android:textAlignment="center"
         android:text="@string/your_order_has_been_placed"
         android:textSize="20sp"
-        android:textStyle="bold"
         android:textColor="@color/black"
         android:id="@+id/tv_orderPlaced"
         />
@@ -78,6 +80,9 @@
         android:textAlignment="center"
         android:backgroundTint="@color/sky_blue"
         app:cornerRadius="30dp"
+        android:id="@+id/btn_continueShopping"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
